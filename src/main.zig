@@ -43,12 +43,7 @@ pub fn main() !void {
     const query = try std.ascii.allocLowerString(allocator, args.query orelse "");
     defer allocator.free(query);
 
-    const scoopHome = env.scoopHomeOwned(allocator) catch |err| switch (err) {
-        error.MissingHomeDir => {
-            return std.io.getStdErr().writer().print("Could not establish scoop home directory. USERPROFILE environment variable is not defined.\n", .{});
-        },
-        else => |e| return e,
-    };
+    const scoopHome = "D:/Programs/scoop";
     defer allocator.free(scoopHome);
 
     // get buckets path
