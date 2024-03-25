@@ -1,4 +1,6 @@
 tests/*.out
 zig-cache/
-zig-out/
 testing/
+
+zig-out/**/*.*
+!zig-out/bin/scoop-search.exe
